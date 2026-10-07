@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Baldip-Robin Singh — Technical seller, builder, operator</title>
+  <meta name="description" content="Baldip-Robin Singh is a Senior Sales Engineer at IBM in New York who also runs a trucking fleet, a content agency, and a sports analytics practice.">
+  <meta name="author" content="Baldip-Robin Singh">
+  <link rel="canonical" href="https://baldip.com/">
+  <meta name="theme-color" content="#0f1b2d">
+
+  <!-- Open Graph / social. Note: crawlers only see this head and the gate screen;
+       everything behind the password gate is rendered by JavaScript after unlock. -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://baldip.com/">
+  <meta property="og:title" content="Baldip-Robin Singh">
+  <meta property="og:description" content="Technical seller. Builder. Operator. Senior Sales Engineer at IBM, based in New York.">
+  <meta property="og:image" content="https://baldip.com/assets/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f1b2d'/><text x='32' y='42' font-family='Arial' font-weight='800' font-size='22' text-anchor='middle' fill='%23f2b233'>BRS</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Literata:ital,opsz,wght@0,7..72,400..650;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    // Apply saved theme and unlock state before first paint to avoid flashes.
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        if (sessionStorage.getItem("unlocked") === "1") document.documentElement.classList.add("is-unlocked");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- PASSWORD GATE -->
+  <section class="gate" id="gate" aria-labelledby="gate-title">
+    <div class="gate__inner">
+      <div class="portrait portrait--sm" data-portrait></div>
+      <h1 class="gate__name" id="gate-title">Baldip-Robin<br>Singh</h1>
+      <p class="gate__tagline" data-tagline>Technical seller. Builder. Operator.</p>
+      <form class="gate__form" id="gate-form" novalidate>
+        <label for="gate-pass" class="gate__label">Enter the password to continue</label>
+        <div class="gate__row">
+          <input id="gate-pass" name="password" type="password" autocomplete="current-password" required aria-describedby="gate-msg">
+          <button type="submit" class="btn btn--accent">Enter</button>
+        </div>
+        <p class="gate__msg" id="gate-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="gate__road" aria-hidden="true"></div>
+  </section>
+
+  <!-- SITE -->
+  <div class="site" id="site" hidden>
+    <header class="nav" id="nav">
+      <a class="nav__brand" href="#story" aria-label="Baldip-Robin Singh, home">BRS</a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#story" data-route="story">Story</a></li>
+          <li><a href="#about" data-route="about">About</a></li>
+          <li><a href="#contact" data-route="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="i-sun" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5v3m0 14v3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M2 12h3m14 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="i-moon" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav__progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="view" id="view-story" data-view="story" aria-label="Story"></section>
+      <section class="view" id="view-about" data-view="about" aria-label="About" hidden></section>
+      <section class="view" id="view-contact" data-view="contact" aria-label="Contact" hidden></section>
+    </main>
+
+    <footer class="footer">
+      <p>Baldip-Robin Singh, New York</p>
+      <p><a href="#story" class="footer__top">Back to the start</a></p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
